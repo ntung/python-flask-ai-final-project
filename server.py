@@ -9,7 +9,7 @@ def detect_emotion():
     text_to_analyze = request.args.get('textToAnalyze')
     dominant_emotion = emotion_detector(text_to_analyze)
 
-    if dominant_emotion is None:
+    if dominant_emotion["dominant_emotion"] is None:
         return "Invalid text! Please try again."
     else:
         return "The given text has been identified as {}.".format(dominant_emotion)
